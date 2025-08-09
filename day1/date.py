@@ -8,7 +8,7 @@ class Date2025:
     def init(obj, day, month):
         obj.day = day
         obj.month = month
-        Date2025.count = obj.count + 1
+        Date2025.count += 1
 
     # Печатает дату
     def print_dt(obj):
