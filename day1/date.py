@@ -23,59 +23,33 @@ class Date2025:
     # Сравнивает даты
     def compare_sign(self, obj2):
         if self.month < obj2.month:
-            print("Первая дата больше второй")    # Первая дата больше второй
+            print("Первая дата больше второй")
+            # Первая дата больше второй
         elif(self.month == obj2.month and self.day < obj2.day):
-            print("Первая дата больше второй")    # Первая дата больше второй
+            print("Первая дата больше второй")
+            # Первая дата больше второй
         elif(self.month > obj2.month):
-            print("Вторая дата больше первой")    # Вторая дата больше первой
+            print("Вторая дата больше первой")
+            # Вторая дата больше первой
         elif(self.month == obj2.month and self.day > obj2.day):
-            print("Вторая дата больше первой")    # Вторая дата больше первой
+            print("Вторая дата больше первой")
+            # Вторая дата больше первой
         elif(self.day == obj2.day and self.month == obj2.month):
             print("Даты равны")
 
     # Добавляет к дате 1 день
-    def add_day(obj):
-        final_day = obj.months[obj.month]
-        if obj.month == 12 and obj.day == final_day:
+    def add_day(self):
+        final_day = self.months[self.month]
+        if self.month == 12 and self.day == final_day:
             raise TypeError("Дата выходит за пределы 2025 года")
-        elif(obj.day == final_day):
-            obj.month += 1
-            obj.day = 1
+        elif(self.day == final_day):
+            self.month += 1
+            self.day = 1
         else:
-            obj.day += 1
+            self.day += 1
 
-
-dt1 = Date2025(15, 3)
-dt3 = Date2025(7, 7)
-# Date2025.init(dt1, 15, 3)
-# Date2025.init(dt3, 7, 7)
-Date2025.__str__(dt1)
-
-dt2 = Date2025(31, 3)
-
-# Date2025.init(dt2, 31, 3)
-Date2025.__str__(dt2)
-"""
-print(dt2 is dt1)
-
-print("1 объект день напрямую " + str(dt1.day))
-print("2 объект день напрямую " + str(dt2.day))
-"""
-Date2025.compare_sign(dt1, dt2)
-
-print("dt2 before increment:")
-Date2025.__str__(dt2)
-
-Date2025.add_day(dt2)
-dt2.add_day()
-
-print("dt2 after increment:")
-Date2025.__str__(dt2)
-
-
-print("print(dt2)")
-print(dt2.__str__())
-
-#print(object.__dict__)
-#print(object.__str__)
-
+    def leap_year(self):
+        if (self.year % 4 == 0):
+            print("Год " + str(self.year) + " является високосным")
+        else:
+            print("Год " + str(self.year) + " не является високосным")
