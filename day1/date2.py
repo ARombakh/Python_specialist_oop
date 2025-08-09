@@ -1,0 +1,78 @@
+class Date2025:
+    months = {1: 31, 2: 28, 3: 31, 4: 30, 5: 31, 6: 30,
+              7: 31, 8: 31, 9: 30, 10: 31, 11: 30, 12: 31}
+
+    # Инициализирует дату
+    def init(obj, day, month, year):
+        obj.day = day
+        obj.month = month
+        obj.year = year
+
+    def leap_year(obj):
+        if obj.year % 4 == 0:
+            print("Leap year")
+        else:
+            print("Not leap year")
+
+    # Печатает дату
+    def print_dt(obj):
+        print(str(obj.day).zfill(2) + "-"
+              + str(obj.month).zfill(2) + "-"
+              + str(obj.year))
+
+    # Сравнивает даты
+    def compare_bool(obj1, obj2):
+        print(obj1.day == obj2.day and obj1.month == obj2.month)
+
+    # Сравнивает даты
+    def compare_sign(obj1, obj2):
+        if obj1.month < obj2.month:
+            print("Первая дата больше второй")    # Первая дата больше второй
+        elif(obj1.month == obj2.month and obj1.day < obj2.day):
+            print("Первая дата больше второй")    # Первая дата больше второй
+        elif(obj1.month > obj2.month):
+            print("Вторая дата больше первой")    # Вторая дата больше первой
+        elif(obj1.month == obj2.month and obj1.day > obj2.day):
+            print("Вторая дата больше первой")    # Вторая дата больше первой
+        elif(obj1.day == obj2.day and obj1.month == obj2.month):
+            print("Даты равны")
+
+    # Добавляет к дате 1 день
+    def add_day(obj):
+        final_day = obj.months[obj.month]
+        if obj.month == 12 and obj.day == final_day:
+            raise TypeError("Дата выходит за пределы 2025 года")
+        elif(obj.day == final_day):
+            obj.month += 1
+            obj.day = 1
+        else:
+            obj.day += 1
+
+
+dt1 = Date2025()
+Date2025.init(dt1, 15, 3, 2025)
+Date2025.print_dt(dt1)
+
+dt2 = Date2025()
+
+Date2025.init(dt2, 31, 3, 2025)
+Date2025.print_dt(dt2)
+
+Date2025.leap_year(dt2)
+
+"""
+print(dt2 is dt1)
+
+print("1 объект день напрямую " + str(dt1.day))
+print("2 объект день напрямую " + str(dt2.day))
+"""
+Date2025.compare_sign(dt1, dt2)
+
+print("dt2 before increment:")
+Date2025.print_dt(dt2)
+
+Date2025.add_day(dt2)
+
+print("dt2 after increment:")
+Date2025.print_dt(dt2)
+
