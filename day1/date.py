@@ -1,5 +1,6 @@
 class Date2025:
     year = 2025
+    count = 0
     months = {1: 31, 2: 28, 3: 31, 4: 30, 5: 31, 6: 30,
               7: 31, 8: 31, 9: 30, 10: 31, 11: 30, 12: 31}
 
@@ -7,6 +8,7 @@ class Date2025:
     def init(obj, day, month):
         obj.day = day
         obj.month = month
+        Date2025.count = obj.count + 1
 
     # Печатает дату
     def print_dt(obj):
@@ -44,7 +46,9 @@ class Date2025:
 
 
 dt1 = Date2025()
+dt3 = Date2025()
 Date2025.init(dt1, 15, 3)
+Date2025.init(dt3, 7, 7)
 Date2025.print_dt(dt1)
 
 dt2 = Date2025()
@@ -66,3 +70,5 @@ Date2025.add_day(dt2)
 
 print("dt2 after increment:")
 Date2025.print_dt(dt2)
+
+print(dt1.__dict__)
