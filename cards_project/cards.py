@@ -21,6 +21,7 @@ object discard
 dict rank
 """
 
+
 NUM_CARDS = 36
 ranks = {'6': 1, '7': 2, '8': 3, '9': 4, '10': 5, 'J': 6, 'Q': 7, 'K': 8, 'A': 9}
 suits = ("spades", "hearts", "diamonds", "clubs")
@@ -44,17 +45,7 @@ class deck_36:
                 self.cards.append(new_card)
 
     def shuffle(self):
-        cards2 = []
-        cards_left = NUM_CARDS
-        rng = list(range(NUM_CARDS))
-        for i in range(NUM_CARDS):
-            rand_card = random.randint(0, cards_left)
-            print(rand_card)
-            cards2.append(self.cards.pop(rand_card))
-            rng.pop(rand_card)
-            cards_left -= 1
-
-        self.cards = cards2
+        random.shuffle(self.cards)
 
     def deal(self, card_no):
         return self.cards.pop(card_no)
