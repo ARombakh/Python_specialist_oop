@@ -15,11 +15,10 @@ class Bar:
 			if self.a == other.a and self.b == other.b: res = True
 		return res
 	
-	# def __ne__(self, other):
-	# 	res = True
-	# 	if type(other) is Bar:
-	# 		if not (self.a == other.a and self.b == other.b): res = False
-	# 	return res
+	# def __repr__(self):
+	# 	return "Bar(" + str(self.a) + ", " + str(self.b) + ")"
+	def __repr__(self):
+		return f'Bar({self.a}, {self.b})'
 
 	def __ne__(self, other):
 		return not self.__eq__(other)
