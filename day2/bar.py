@@ -22,3 +22,11 @@ class Bar:
 
 	def __ne__(self, other):
 		return not self.__eq__(other)
+
+	def __contains__(self, item):
+		print('contains')
+		return item in (self.a, self.b)
+	
+	def __getitem__(self, ind):
+		if ind == 0 or ind == 'side1': return self.a
+		elif ind == 1 or ind == 'side1': return self.b

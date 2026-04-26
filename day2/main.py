@@ -20,4 +20,6 @@ print(bar3 == bar1)
 print("bar3 is bar1:")
 print(bar3 is bar1)
 
-for item in bar1: print(item)
+# for item in bar1: print(item)
+
+print(7 in bar1)
