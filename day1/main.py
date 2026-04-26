@@ -20,8 +20,9 @@ Date2025.__str__(dt2)
 print("Print dt2 using str before increment:")
 dt2.__str__()
 
-Date2025.add_day(dt2)
-dt2.add_day()
+print("Incrementing:")
+Date2025.add_day(dt2).__str__()
+dt2.add_day().__str__()
 
 print("dt2 after increment using:")
 Date2025.__str__(dt2)

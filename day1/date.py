@@ -47,6 +47,7 @@ class Date2025:
             self.day = 1
         else:
             self.day += 1
+        return self
 
     def leap_year(self):
         if (self.year % 4 == 0):
