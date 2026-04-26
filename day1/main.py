@@ -21,14 +21,14 @@ print("Print dt2 using str before increment:")
 dt2.__str__()
 
 print("Incrementing:")
-Date2025.add_day(dt2).__str__()
-dt2.add_day().__str__()
+print(Date2025.add_day(dt2))
+print(dt2.add_day())
 
 print("dt2 after increment using:")
-Date2025.__str__(dt2)
+print(Date2025.__str__(dt2))
 
 print("print(dt2)")
-dt2.__str__()
+print(dt2)
 
 dt2.leap_year()
 #print(object.__dict__)

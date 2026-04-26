@@ -12,7 +12,7 @@ class Date2025:
 
     # Печатает дату
     def __str__(self):
-        print(str(self.day).zfill(2) + "-"
+        return (str(self.day).zfill(2) + "-"
               + str(self.month).zfill(2) + "-"
               + str(self.year))
 
