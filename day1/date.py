@@ -22,16 +22,16 @@ class Date2025:
 
     # Сравнивает даты
     def compare_sign(self, obj2):
-        if self.month < obj2.month:
+        if self.month > obj2.month:
             print("Первая дата больше второй")
             # Первая дата больше второй
-        elif(self.month == obj2.month and self.day < obj2.day):
+        elif(self.month == obj2.month and self.day > obj2.day):
             print("Первая дата больше второй")
             # Первая дата больше второй
-        elif(self.month > obj2.month):
+        elif(self.month < obj2.month):
             print("Вторая дата больше первой")
             # Вторая дата больше первой
-        elif(self.month == obj2.month and self.day > obj2.day):
+        elif(self.month == obj2.month and self.day < obj2.day):
             print("Вторая дата больше первой")
             # Вторая дата больше первой
         elif(self.day == obj2.day and self.month == obj2.month):
